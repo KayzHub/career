@@ -5,7 +5,7 @@
     <div class="mfoot">
         <div class="container">
             <div>
-                <h6 class="text-center" style="color: white">purelymyidea &copy; </h6>
+                <h6 class="text-center" style="color: white">devopsClassDemo &copy; </h6>
 
             </div>
         </div>
