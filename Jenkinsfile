@@ -3,7 +3,6 @@ pipeline {
     environment {
         SSH_CRED = credentials('web-server-key')
         def CONNECT = 'ssh -o StrictHostKeyChecking=no -i $SSH_CRED ec2-54-227-193-51.compute-1.amazonaws.com'
-        def WEBSERVER = 'ec2-54-227-193-51.compute-1.amazonaws.com'
     }
     stages {
         
@@ -21,7 +20,7 @@ pipeline {
                 echo 'Deploying'
                 sshagent(['web-server-key']) {
                     sh 'scp -o StrictHostKeyChecking=no -i $SSH_CRED webapp.zip ubuntu@ec2-54-227-193-51.compute-1.amazonaws.com:/home/ubuntu'
-                    sh '$CONNECT -i $SSH_CRED "curl ifconfig.io"'
+                    sh '$CONNECT "curl ifconfig.io"'
                     sh '$CONNECT -i $SSH_CRED "sudo apt install zip -y"'
                     sh '$CONNECT -i $SSH_CRED "rm -rf /var/www/html/"'
                     sh '$CONNECT -i $SSH_CRED "mkdir /var/www/html/"'
