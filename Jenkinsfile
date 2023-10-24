@@ -25,7 +25,7 @@ pipeline {
                     sh '$CONNECT "sudo rm -rf /var/www/html/"'
                     sh '$CONNECT "sudo mkdir /var/www/html/"'
                     // sh '$CONNECT "unzip /home/ubuntu/webapp.zip -d /home/ubuntu/app"'
-                    sh '$CONNECT "unzip webapp.zip -d /var/www/html/"'
+                    sh '$CONNECT "sudo unzip webapp.zip -d /var/www/html/"'
                     sh '$CONNECT "sudo rm /var/www/html/config/connect.php"'
                     sh '$CONNECT "sudo cp /home/ubuntu/connect.php /var/www/html/config/"'
                     sh '$CONNECT "sudo sh /var/www/html/database/test-db.sh"'
